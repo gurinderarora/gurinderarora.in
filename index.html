@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gurinder Arora | Data & AI Solutions Lead</title>
+    <meta name="description" content="Senior Data & AI Lead. Specializing in Multi-Agent Systems, SAP/Qlik Migrations, and Strategic Leadership. Based in Munich.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+
+    <style>
+        /* ==================================================
+           DESIGN TOKENS
+           ================================================== */
+        :root {
+            --bg-core: #050505;
+            --bg-panel: #0a0a0a;
+            --border: #222;
+            
+            /* Semantic Colors */
+            --data-blue: #3b82f6;
+            --ai-purple: #8b5cf6;
+            --strat-green: #10b981;
+            --tech-orange: #f59e0b;
+            
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            
+            --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+            --font-mono: 'JetBrains Mono', 'Consolas', monospace;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        
+        /* 🔧 DESKTOP SCROLL OFFSET */
+        section { scroll-margin-top: 55px; }
+
+        body {
+            background-color: var(--bg-core);
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 { letter-spacing: -0.03em; }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        .mono { font-family: var(--font-mono); }
+        
+        .text-blue { color: var(--data-blue); }
+        .text-purple { color: var(--ai-purple); }
+        .text-green { color: var(--strat-green); }
+        .text-orange { color: var(--tech-orange); }
+        .text-muted { color: var(--text-muted); }
+
+        /* ==================================================
+           HEADER
+           ================================================== */
+        header {
+            position: fixed; top: 0; width: 100%; z-index: 100;
+            background: rgba(5, 5, 5, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 15px 0;
+        }
+
+        .nav-row { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-weight: 800; font-size: 1.2rem; letter-spacing: -0.05em; }
+
+        .nav-actions { display: flex; gap: 15px; align-items: center; }
+        
+        .resume-btn {
+            font-size: 0.75rem; font-weight: 600;
+            padding: 6px 12px; border: 1px solid var(--border);
+            border-radius: 6px; color: var(--text-muted);
+        }
+        .resume-btn:hover { border-color: var(--text-main); color: var(--text-main); }
+
+        .lang-toggle {
+            background: var(--border); color: white;
+            border: none; padding: 6px 14px;
+            border-radius: 20px; cursor: pointer;
+            font-weight: 700; font-size: 0.75rem;
+        }
+        .lang-toggle:hover { background: var(--data-blue); }
+
+        /* ==================================================
+           HERO SECTION
+           ================================================== */
+        .hero {
+            display: flex; flex-direction: column;
+            justify-content: center; 
+            align-items: flex-start;
+            padding-top: 120px; 
+            /* 🔧 DESKTOP HERO PADDING */
+            padding-bottom: 60px;
+        }
+
+        .hero-tag {
+            font-family: var(--font-mono); color: var(--strat-green);
+            margin-bottom: 15px; font-size: 0.8rem;
+            background: rgba(16, 185, 129, 0.1); padding: 5px 10px; border-radius: 4px;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 6vw, 4.5rem);
+            line-height: 1.1; 
+            margin-bottom: 15px;
+            max-width: 900px;
+        }
+
+        .hero-sub {
+            font-size: 1.15rem; color: var(--text-muted);
+            max-width: 650px;
+            margin-bottom: 60px; 
+        }
+
+        /* 4 Pillar Navigation */
+        .pillar-nav {
+            display: grid; 
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px; width: 100%;
+        }
+
+        .pillar-link {
+            background: var(--bg-panel); border: 1px solid var(--border);
+            padding: 15px; border-radius: 8px; text-align: center;
+            transition: all 0.3s; cursor: pointer;
+        }
+        .pillar-link:hover { transform: translateY(-3px); }
+        
+        .pillar-link.data:hover { border-color: var(--data-blue); }
+        .pillar-link.ai:hover { border-color: var(--ai-purple); }
+        .pillar-link.strat:hover { border-color: var(--strat-green); }
+        .pillar-link.tech:hover { border-color: var(--tech-orange); }
+
+        .pillar-title { font-weight: 700; display: block; margin-bottom: 5px; font-size: 0.95rem; }
+        .pillar-desc { font-size: 0.7rem; color: var(--text-muted); font-family: var(--font-mono); }
+
+        /* ==================================================
+           SECTION COMMON STYLES
+           ================================================== */
+        /* 🔧 DESKTOP SECTION SPACER */
+        .section-spacer { padding: 45px 0; }
+        
+        .section-header { margin-bottom: 40px; }
+        
+        .section-title { 
+            font-size: 2.2rem; margin-bottom: 10px; 
+            padding-left: 20px;
+            border-left: 5px solid #fff; 
+        }
+        
+        .section-subtitle {
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-left: 25px; 
+            max-width: 700px;
+        }
+
+        /* ==================================================
+           SECTION 1: DATA FOUNDATIONS
+           ================================================== */
+        #data.section-spacer { padding-top: 20px; }
+
+        .grid-3 {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--bg-panel); border: 1px solid var(--border);
+            padding: 30px; border-radius: 12px; transition: 0.3s;
+        }
+        .feature-card:hover { border-color: var(--data-blue); }
+        .feature-card h3 { font-family: var(--font-mono); font-size: 0.9rem; margin-bottom: 10px; }
+
+        /* ==================================================
+           SECTION 2: EVOLUTION DIAGRAM
+           ================================================== */
+        .arch-container {
+            background: #080808; border: 1px solid var(--border);
+            border-radius: 16px; padding: 40px; margin-top: 20px;
+        }
+
+        .diagram-wrapper {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 40px; position: relative;
+        }
+        
+        .diagram-wrapper::before {
+            content: 'VS'; position: absolute; left: 50%; top: 50%;
+            transform: translate(-50%, -50%); background: #222; color: #888;
+            padding: 8px; border-radius: 50%; font-size: 0.8rem; z-index: 10;
+            border: 1px solid #444; font-weight: bold;
+        }
+
+        .diagram-box {
+            padding: 30px; border-radius: 12px; background: #0a0a0a;
+            display: flex; flex-direction: column; height: 100%;
+        }
+
+        .phase1 { border: 1px dashed #333; }
+        .phase2 { 
+            border: 1px dashed var(--ai-purple); 
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.05);
+        }
+
+        .phase-title { 
+            font-family: var(--font-mono); font-size: 0.8rem; text-align: center; 
+            margin-bottom: 25px; color: var(--text-muted); letter-spacing: 1px;
+        }
+
+        .node {
+            background: #111; border: 1px solid #333; padding: 12px;
+            text-align: center; font-size: 0.85rem; border-radius: 6px;
+            margin-bottom: 10px; width: 100%; color: #ccc;
+        }
+        .node.highlight { border-color: var(--data-blue); color: white; }
+        .agent-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 10px; }
+        .node.hub { border-color: var(--ai-purple); color: white; }
+        .node.wide { border-style: dashed; color: #888; }
+        .result-text {
+            margin-top: auto; padding-top: 20px; text-align: center;
+            font-size: 0.85rem; font-style: italic; color: #666;
+        }
+
+        /* ==================================================
+           SECTION 3: STRATEGY
+           ================================================== */
+        .bridge-layout {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+            align-items: start;
+        }
+
+        .quote-box {
+            background: rgba(16, 185, 129, 0.05);
+            padding: 20px; margin-top: 30px;
+            font-style: italic; color: var(--text-muted); font-size: 0.9rem;
+            border-radius: 8px;
+        }
+
+        .strat-arsenal-grid {
+            display: flex; flex-wrap: wrap; gap: 10px;
+            align-content: flex-start;
+        }
+
+        .strat-pill {
+            display: inline-block; padding: 8px 16px;
+            border-radius: 30px; font-size: 0.85rem;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: #a7f3d0; background: rgba(16, 185, 129, 0.05);
+        }
+
+        /* ==================================================
+           SECTION 4: TECH ARSENAL
+           ================================================== */
+        .tech-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px;
+        }
+        .tech-category h3 {
+            font-size: 0.9rem; color: var(--text-muted); text-transform: uppercase;
+            letter-spacing: 0.1em; margin-bottom: 20px; border-bottom: 1px solid #333; padding-bottom: 10px;
+        }
+        .tech-list li { margin-bottom: 8px; font-family: var(--font-mono); font-size: 0.9rem; color: #e5e5e5; }
+        .tech-list li::before { content: '>'; color: #444; margin-right: 10px; }
+
+        /* ==================================================
+           FOOTER & FLIP CARDS
+           ================================================== */
+        footer { padding: 80px 0; text-align: center; border-top: 1px solid var(--border); }
+        
+        .contact-container {
+            display: flex; justify-content: center; gap: 25px; margin-top: 40px; flex-wrap: wrap;
+        }
+
+        .flip-card {
+            background-color: transparent;
+            width: 220px;
+            height: 60px;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+
+        .flip-card:hover .flip-card-inner { transform: rotateX(180deg); }
+
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.02em;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .flip-card-front {
+            color: var(--text-main);
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .flip-card:hover .flip-card-front {
+            border-color: var(--data-blue);
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+        }
+
+        .flip-card-back {
+            background: linear-gradient(135deg, #1e3a8a 0%, #111827 100%);
+            color: white;
+            border: 1px solid var(--data-blue);
+            transform: rotateX(180deg);
+            box-shadow: 0 0 25px rgba(59, 130, 246, 0.4);
+        }
+        
+        .flip-card-back a {
+            display: flex; width: 100%; height: 100%;
+            align-items: center; justify-content: center;
+            text-decoration: none;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+        }
+
+        .linkedin-btn {
+            display: flex; align-items: center; justify-content: center;
+            width: 220px; height: 60px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.03);
+            color: white;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .linkedin-btn:hover { 
+            background: rgba(0, 119, 181, 0.1); 
+            border-color: #0077b5;
+            box-shadow: 0 0 20px rgba(0, 119, 181, 0.3);
+        }
+
+        .cursor-blink {
+            display: inline-block;
+            width: 10px;
+            animation: blink 1s step-end infinite;
+            color: var(--text-muted);
+        }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+        /* ==================================================
+           MOBILE RESPONSIVENESS (UPDATED)
+           ================================================== */
+        @media (max-width: 600px) {
+            /* Stack Header Elements */
+            .nav-row {
+                justify-content: center;
+                gap: 15px;
+            }
+            .logo {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 0;
+            }
+            .nav-actions {
+                justify-content: center;
+                width: 100%;
+                gap: 8px;
+            }
+            
+            /* Adjust Header & Hero for Mobile Stack */
+            header { padding: 10px 0; }
+            .hero { 
+                padding-top: 140px; 
+                /* 🔧 FIX: Keep bottom padding proportional on mobile */
+                padding-bottom: 40px; 
+            }
+            
+            /* 🔧 FIX: Mobile Scroll Offset calculated for stacked header (approx 120px height) */
+            section { scroll-margin-top: 120px; }
+            
+            /* 🔧 FIX: Match or slightly reduce section spacer on mobile */
+            .section-spacer { padding: 40px 0; }
+            
+            /* Adjust Layouts */
+            .pillar-nav { grid-template-columns: 1fr 1fr; }
+            .diagram-wrapper { grid-template-columns: 1fr; gap: 40px; }
+            .diagram-wrapper::before { display: none; }
+            .bridge-layout { grid-template-columns: 1fr; gap: 40px; }
+            .contact-container { gap: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-row">
+            <div class="logo">GURINDER&nbsp;&nbsp;ARORA_</div>
+            <div class="nav-actions">
+                <a href="Gurinder_Arora__E_.pdf" class="resume-btn" download>CV (EN)</a>
+                <a href="Gurinder_Arora__D_.pdf" class="resume-btn" download>CV (DE)</a>
+                <button class="lang-toggle" onclick="toggleLang()">
+                    <span id="lang-text">EN | DE</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero container">
+            <div class="hero-tag" data-en="> SYSTEM_STATUS: READY_FOR_HIRE" data-de="> SYSTEM_STATUS: READY_FOR_HIRE">
+                > SYSTEM_STATUS: READY_FOR_HIRE
+            </div>
+            <h1 data-en="End-to-End Data &<br><span class='text-blue'>AI Solutions Lead</span>"
+                data-de="End-to-End Data &<br><span class='text-blue'>AI Solutions Lead</span>">
+                End-to-End Data &<br><span class="text-blue">AI Solutions Lead</span>
+            </h1>
+            <p class="hero-sub" 
+               data-en="I build the bridge between raw data and business value. From mastering Qlik/SAP pipelines to architecting modular Multi-Agent Systems. I lead teams, navigate C-level strategy, and deliver production-grade solutions."
+               data-de="Ich baue die Brücke zwischen Rohdaten und geschäftlichem Mehrwert. Von der Beherrschung von Qlik/SAP-Pipelines bis zur Architektur modularer Multi-Agenten-Systeme. Ich leite Teams, navigiere durch C-Level-Strategien und liefere produktive Lösungen.">
+                I build the bridge between raw data and business value. From mastering Qlik/SAP pipelines to architecting modular Multi-Agent Systems. I lead teams, navigate C-level strategy, and deliver production-grade solutions.
+            </p>
+
+            <!-- PILLAR LINKS -->
+            <nav class="pillar-nav">
+                <a href="#data" class="pillar-link data">
+                    <span class="pillar-title text-blue" data-en="Data Roots" data-de="Daten-Basis">Data Roots</span>
+                    <span class="pillar-desc" data-en="ETL, Qlik, SAP Migrations" data-de="ETL, Qlik, SAP Migrationen">ETL, Qlik, SAP Migrations</span>
+                </a>
+                <a href="#ai" class="pillar-link ai">
+                    <span class="pillar-title text-purple" data-en="AI Evolution" data-de="KI-Evolution">AI Evolution</span>
+                    <span class="pillar-desc" data-en="Agents, RAG, MLOps" data-de="Agenten, RAG, MLOps">Agents, RAG, MLOps</span>
+                </a>
+                <a href="#strategy" class="pillar-link strat">
+                    <span class="pillar-title text-green" data-en="Strategy Lead" data-de="Strategie-Lead">Strategy Lead</span>
+                    <span class="pillar-desc" data-en="Team, Consulting" data-de="Team, Beratung">Team, Consulting</span>
+                </a>
+                <a href="#tech" class="pillar-link tech">
+                    <span class="pillar-title text-orange" data-en="The Technical Arsenal" data-de="Das technische Arsenal">The Technical Arsenal</span>
+                    <span class="pillar-desc" data-en="Full Stack List" data-de="Full Stack Liste">Full Stack List</span>
+                </a>
+            </nav>
+        </section>
+
+        <!-- SECTION 1: DATA ROOTS -->
+        <section id="data" class="section-spacer container">
+            <div class="section-header">
+                <h2 class="section-title" style="border-color: var(--data-blue);" data-en="The Foundation" data-de="Das Fundament">The Foundation</h2>
+                <p class="section-subtitle" 
+                   data-en="Before AI, there must be reliable data. Transforming 'Excel Hell' into automated intelligence."
+                   data-de="Vor der KI braucht es verlässliche Daten. Die Transformation von 'Excel-Chaos' in automatisierte Intelligenz.">
+                    Before AI, there must be reliable data. Transforming "Excel Hell" into automated intelligence.
+                </p>
+            </div>
+
+            <div class="grid-3">
+                <div class="feature-card">
+                    <h3 class="text-blue" data-en="PIPELINE MASTERY" data-de="PIPELINE MASTERY">PIPELINE MASTERY</h3>
+                    <p class="text-muted" 
+                       data-en="Built the entire SAP to Qlik Sense pipeline solo. Transformed fragmented Excel sheets into a reliable, automated data flow updating in 10 minutes (down from weeks)."
+                       data-de="Alleiniger Aufbau der kompletten SAP-zu-Qlik-Sense-Pipeline. Transformation fragmentierter Excel-Tabellen in einen zuverlässigen, automatisierten Datenfluss (Update in 10 Min. statt Wochen).">
+                        Built the entire SAP to Qlik Sense pipeline solo. Transformed fragmented Excel sheets into a reliable, automated data flow updating in 10 minutes (down from weeks).
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <h3 class="text-blue" data-en="MIGRATION ARCHITECT" data-de="MIGRATION ARCHITECT">MIGRATION ARCHITECT</h3>
+                    <p class="text-muted" 
+                       data-en="Executed high-stakes migrations with <strong>Zero Downtime</strong>.<br>• Qlik Sense → SAP Analytics Cloud (SAC)<br>• Legacy ERP → Fab4Minds<br>• Local Python → AWS Cloud"
+                       data-de="Durchführung kritischer Migrationen mit <strong>Zero Downtime</strong>.<br>• Qlik Sense → SAP Analytics Cloud (SAC)<br>• Legacy ERP → Fab4Minds<br>• Local Python → AWS Cloud">
+                        Executed high-stakes migrations with <strong>Zero Downtime</strong>. 
+                        <br>• Qlik Sense → SAP Analytics Cloud (SAC)
+                        <br>• Legacy ERP → Fab4Minds
+                        <br>• Local Python → AWS Cloud
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <h3 class="text-blue" data-en="DEEP EMBEDDING" data-de="TIEFE INTEGRATION">DEEP EMBEDDING</h3>
+                    <p class="text-muted" 
+                       data-en="Designed dashboards serving 50+ active users. I lived in the departments (Logistics, Sales) to understand the <i>real</i> KPIs beyond the surface level."
+                       data-de="Design von Dashboards für 50+ aktive Nutzer. Ich war direkt in den Abteilungen (Logistik, Vertrieb), um die <i>echten</i> KPIs jenseits der Oberfläche zu verstehen.">
+                        Designed dashboards serving 50+ active users. I lived in the departments (Logistics, Sales) to understand the <i>real</i> KPIs beyond the surface level.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: AI EVOLUTION -->
+        <section id="ai" class="section-spacer container">
+            <div class="section-header">
+                <h2 class="section-title" style="border-color: var(--ai-purple);" data-en="The AI Evolution" data-de="Die KI-Evolution">The AI Evolution</h2>
+                <p class="section-subtitle" 
+                   data-en="Visualizing my transition from Linear ML to Networked AI." 
+                   data-de="Visualisierung meines Übergangs von linearem ML zu vernetzter KI.">
+                    Visualizing my transition from Linear ML to Networked AI.
+                </p>
+            </div>
+
+            <div class="arch-container">
+                <div class="diagram-wrapper">
+                    <!-- PHASE 1 -->
+                    <div class="diagram-box phase1">
+                        <div class="phase-title" data-en="PHASE 1: LINEAR ML (2022)" data-de="PHASE 1: LINEARES ML (2022)">PHASE 1: LINEAR ML (2022)</div>
+                        <div class="node" data-en="Source: SAP / Excel" data-de="Quelle: SAP / Excel">Source: SAP / Excel</div>
+                        <div class="node highlight" data-en="Python ETL Script" data-de="Python ETL Script">Python ETL Script</div>
+                        <div class="node" data-en="Simple Prediction Model" data-de="Einfaches Prognosemodell">Simple Prediction Model</div>
+                        <div class="node" data-en="Output: Static List" data-de="Output: Statische Liste">Output: Static List</div>
+                        <p class="result-text">
+                            <span data-en="Reliable, but limited adaptability." data-de="Zuverlässig, aber begrenzt anpassbar.">Reliable, but limited adaptability.</span><br>
+                            <span style="color: #ccc; font-weight: bold;" data-en="Result: 15% Order Uplift" data-de="Ergebnis: 15% mehr Bestellungen">Result: 15% Order Uplift</span>
+                        </p>
+                    </div>
+
+                    <!-- PHASE 2 -->
+                    <div class="diagram-box phase2">
+                        <div class="phase-title text-purple" data-en="PHASE 2: MULTI-AGENT SYSTEM (2024)" data-de="PHASE 2: MULTI-AGENTEN SYSTEM (2024)">PHASE 2: MULTI-AGENT SYSTEM (2024)</div>
+                        <div class="node" data-en="Orchestrator (Apache Airflow)" data-de="Orchestrator (Apache Airflow)">Orchestrator (Apache Airflow)</div>
+                        <div class="agent-grid">
+                            <div class="node" data-en="Data Agent" data-de="Daten Agent">Data Agent</div>
+                            <div class="node hub" data-en="Strategy Agent" data-de="Strategie Agent">Strategy Agent</div>
+                            <div class="node" data-en="Feedback" data-de="Feedback">Feedback</div>
+                        </div>
+                        <div class="node wide" data-en="RAG Knowledge Base" data-de="RAG Knowledge Base">RAG Knowledge Base</div>
+                        <p class="result-text" style="color: var(--text-main);">
+                            <span data-en="Modular, Context-Aware, Scalable." data-de="Modular, Kontext-sensitiv, Skalierbar.">Modular, Context-Aware, Scalable.</span><br>
+                            <span class="text-green" style="font-weight: bold;" data-en="Result: 25% Uplift + Scaled Internally" data-de="Ergebnis: 25% Uplift + Intern Skaliert">Result: 25% Uplift + Scaled Internally</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: STRATEGY -->
+        <section id="strategy" class="section-spacer container">
+            <div class="section-header">
+                <h2 class="section-title" style="border-color: var(--strat-green);" data-en="The Strategic Bridge" data-de="Die Strategische Brücke">The Strategic Bridge</h2>
+            </div>
+
+            <div class="bridge-layout">
+                <!-- LEFT -->
+                <div>
+                    <h3 style="font-size: 1.6rem; margin-bottom: 20px;">"I speak C-Level & Python"</h3>
+                    <p class="text-muted" style="font-size: 1.05rem;" 
+                       data-en="My superpower isn't just coding—it's translation. I convert vague business problems into strict technical specifications. I manage teams without micromanagement, focusing on autonomy and results."
+                       data-de="Meine Superkraft ist nicht nur das Coden – es ist die Übersetzung. Ich wandle vage Geschäftsprobleme in strikte technische Spezifikationen um. Ich führe Teams ohne Mikromanagement, mit Fokus auf Autonomie und Ergebnisse.">
+                        My superpower isn't just coding—it's translation. I convert vague business problems into strict technical specifications. I manage teams without micromanagement, focusing on autonomy and results.
+                    </p>
+                    
+                    <div class="quote-box">
+                        <span data-en='"Gurinder implements solutions that actually get used, because he involves us from Day 1."' data-de='"Gurinder implementiert Lösungen, die tatsächlich genutzt werden, weil er uns von Tag 1 an einbindet."'>
+                            "Gurinder implements solutions that actually get used, because he involves us from Day 1."
+                        </span>
+                        <br><span style="font-size: 0.8rem; opacity: 0.7;" data-en="— Stakeholder Feedback" data-de="— Stakeholder Feedback">— Stakeholder Feedback</span>
+                    </div>
+                </div>
+
+                <!-- RIGHT -->
+                <div>
+                    <h4 class="mono text-green" style="margin-bottom: 20px;" data-en="STRATEGIC ARSENAL" data-de="STRATEGISCHES ARSENAL">STRATEGIC ARSENAL</h4>
+                    <div class="strat-arsenal-grid">
+                        <span class="strat-pill" data-en="Stakeholder Management" data-de="Stakeholder Management">Stakeholder Management</span>
+                        <span class="strat-pill" data-en="Team Leadership" data-de="Teamführung">Team Leadership</span>
+                        <span class="strat-pill" data-en="Internal Consulting" data-de="Interne Beratung">Internal Consulting</span>
+                        <span class="strat-pill" data-en="Modular System Scalability" data-de="Modulare Systemskalierung">Modular System Scalability</span>
+                        <span class="strat-pill" data-en="Agile / Scrum" data-de="Agile / Scrum">Agile / Scrum</span>
+                        <span class="strat-pill" data-en="Requirement Engineering" data-de="Anforderungsmanagement">Requirement Engineering</span>
+                        <span class="strat-pill" data-en="Zero-Budget Prototyping" data-de="Zero-Budget Prototyping">Zero-Budget Prototyping</span>
+                        <span class="strat-pill" data-en="Cross-Dept Communication" data-de="Abt.übergreifende Kommunikation">Cross-Dept Communication</span>
+                        <span class="strat-pill" data-en="German (C2/Fluent)" data-de="Deutsch (C2/Verhandlungssicher)">German (C2/Fluent)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: TECH ARSENAL -->
+        <section id="tech" class="section-spacer container" style="border-bottom: none;">
+            <div class="section-header">
+                <h2 class="section-title" style="border-color: var(--tech-orange);" data-en="The Technical Arsenal" data-de="Das technische Arsenal">The Technical Arsenal</h2>
+                <p class="section-subtitle" data-en="Full Stack Capabilities." data-de="Full Stack Fähigkeiten.">Full Stack Capabilities.</p>
+            </div>
+            
+            <div class="tech-grid">
+                <div class="tech-category">
+                    <h3 data-en="AI & GenAI" data-de="KI & GenAI">AI & GenAI</h3>
+                    <ul class="tech-list">
+                        <li>Multi-Agent Systems</li>
+                        <li>LangChain / LLM Apps</li>
+                        <li>RAG / Vector DBs</li>
+                        <li>GenAI Integration</li>
+                        <li>Azure OpenAI Service</li>
+                        <li>Ollama / Local LLMs</li>
+                        <li>n8n (AI Automation)</li>
+                        <li data-en="Predictive Modeling" data-de="Predictive Modeling">Predictive Modeling</li>
+                        <li data-en="AI-Assisted Dev" data-de="AI-Assisted Dev">AI-Assisted Dev</li>
+                    </ul>
+                </div>
+
+                <div class="tech-category">
+                    <h3 data-en="Data Platforms" data-de="Datenplattformen">Data Platforms</h3>
+                    <ul class="tech-list">
+                        <li>SAP Datasphere</li>
+                        <li>SAP Analytics Cloud (SAC)</li>
+                        <li>Qlik Sense (Mastery)</li>
+                        <li>SAP ERP / Fab4Minds</li>
+                        <li>Snowflake</li>
+                        <li>Power BI / Tableau</li>
+                        <li>Excel (Advanced)</li>
+                    </ul>
+                </div>
+
+                <div class="tech-category">
+                    <h3 data-en="Engineering & Cloud" data-de="Engineering & Cloud">Engineering & Cloud</h3>
+                    <ul class="tech-list">
+                        <li>Python (Pandas, NumPy)</li>
+                        <li>SQL (Advanced)</li>
+                        <li>AWS (S3, EC2, Lambda)</li>
+                        <li>Apache Airflow</li>
+                        <li>Docker / Kubernetes</li>
+                        <li>Apache Spark</li>
+                        <li>ETL Pipeline Design</li>
+                        <li>Git / VS Code</li>
+                    </ul>
+                </div>
+
+                <div class="tech-category">
+                    <h3 data-en="Strategy & Soft" data-de="Strategie & Soft Skills">Strategy & Soft</h3>
+                    <ul class="tech-list">
+                        <li data-en="Stakeholder Mgmt" data-de="Stakeholder Mgmt">Stakeholder Mgmt</li>
+                        <li data-en="Requirements Analysis" data-de="Anforderungsanalyse">Requirements Analysis</li>
+                        <li data-en="Agile / Scrum" data-de="Agile / Scrum">Agile / Scrum</li>
+                        <li data-en="Workshop Facilitation" data-de="Workshop-Moderation">Workshop Facilitation</li>
+                        <li data-en="Product Ownership" data-de="Product Ownership">Product Ownership</li>
+                        <li data-en="Change Management" data-de="Change Management">Change Management</li>
+                        <li data-en="Strategic Roadmap" data-de="Strategische Roadmap">Strategic Roadmap</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <!-- Blinking Cursor Effect -->
+            <h2 class="logo" style="color: white; margin-bottom: 20px;">GURINDER&nbsp;&nbsp;ARORA<span class="cursor-blink">_</span></h2>
+            <p class="mono text-muted">Munich, Germany</p>
+            
+            <!-- Flip Cards Container -->
+            <div class="contact-container">
+                
+                <!-- Phone Flip Card -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <span data-en="Phone" data-de="Telefon">Phone</span>
+                        </div>
+                        <div class="flip-card-back">
+                            <a href="tel:+491704370034">+49 170 437 0034</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Email Flip Card -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <span data-en="Email" data-de="E-Mail">Email</span>
+                        </div>
+                        <div class="flip-card-back">
+                            <a href="mailto:arora.gurinder0@gmail.com" style="font-size: 0.85rem;">arora.gurinder0@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LinkedIn Button -->
+                <a href="https://linkedin.com/in/aroragurinder" class="linkedin-btn">LinkedIn</a>
+
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Language Switcher
+        let lang = 'en';
+        function toggleLang() {
+            lang = lang === 'en' ? 'de' : 'en';
+            document.getElementById('lang-text').innerText = lang === 'en' ? 'EN | DE' : 'DE | EN';
+            document.querySelectorAll(`[data-${lang}]`).forEach(el => {
+                el.innerHTML = el.getAttribute(`data-${lang}`);
+            });
+        }
+    </script>
+</body>
+</html>
