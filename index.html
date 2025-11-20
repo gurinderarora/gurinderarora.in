@@ -6,6 +6,20 @@
     <title>Gurinder Arora | Data & AI Solutions Lead</title>
     <meta name="description" content="Senior Data & AI Lead. Specializing in Multi-Agent Systems, SAP/Qlik Migrations, and Strategic Leadership. Based in Munich.">
     
+    <!-- Open Graph / Social Media Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aroragurinder.com/">
+    <meta property="og:title" content="Gurinder Arora | Data & AI Solutions Lead">
+    <meta property="og:description" content="End-to-End Data & AI Solutions Lead. From mastering Qlik/SAP pipelines to architecting Multi-Agent Systems. Production-grade solutions that last.">
+    <meta property="og:image" content="https://aroragurinder.com/preview.jpg">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://aroragurinder.com/">
+    <meta name="twitter:title" content="Gurinder Arora | Data & AI Solutions Lead">
+    <meta name="twitter:description" content="End-to-End Data & AI Solutions Lead. Multi-Agent Systems, SAP/Qlik Migrations, Strategic Leadership.">
+    <meta name="twitter:image" content="https://aroragurinder.com/preview.jpg">
+    
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
 
@@ -35,7 +49,7 @@
         html { scroll-behavior: smooth; }
         
         /* 🔧 DESKTOP SCROLL OFFSET */
-        section { scroll-margin-top: 55px; }
+        section { scroll-margin-top: 70px; }  /* 🔧 FIXED: Adjusted to match actual header height */
 
         body {
             background-color: var(--bg-core);
@@ -46,7 +60,28 @@
         }
 
         h1, h2, h3 { letter-spacing: -0.03em; }
-        a { text-decoration: none; color: inherit; transition: 0.3s; }
+
+        /* ==================================================
+           SKIP TO CONTENT (ACCESSIBILITY)
+           ================================================== */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--data-blue);
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 0 0 4px 0;
+            z-index: 9999;
+            font-weight: 600;
+            transition: top 0.3s;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+
+                a { text-decoration: none; color: inherit; transition: 0.3s; }
         ul { list-style: none; }
 
         .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
@@ -80,6 +115,22 @@
             border-radius: 6px; color: var(--text-muted);
         }
         .resume-btn:hover { border-color: var(--text-main); color: var(--text-main); }
+
+        /* Resume Button Click Feedback */
+        .resume-btn:active {
+            transform: scale(0.95);
+            background: rgba(59, 130, 246, 0.1);
+        }
+        
+        .resume-btn.downloaded {
+            border-color: var(--strat-green);
+            color: var(--strat-green);
+        }
+        
+        .resume-btn.downloaded::after {
+            content: ' ✓';
+        }
+
 
         .lang-toggle {
             background: var(--border); color: white;
@@ -394,7 +445,7 @@
             }
             
             /* 🔧 FIX: Mobile Scroll Offset calculated for stacked header (approx 120px height) */
-            section { scroll-margin-top: 120px; }
+            section { scroll-margin-top: 100px; }  /* 🔧 FIXED: Optimized for stacked mobile header */
             
             /* 🔧 FIX: Match or slightly reduce section spacer on mobile */
             .section-spacer { padding: 40px 0; }
@@ -409,6 +460,10 @@
     </style>
 </head>
 <body>
+
+
+    <!-- Skip to Content Link (Accessibility) -->
+    <a href="#data" class="skip-link" data-en="Skip to main content" data-de="Zum Hauptinhalt springen">Skip to main content</a>
 
     <header>
         <div class="container nav-row">
@@ -434,9 +489,9 @@
                 End-to-End Data &<br><span class="text-blue">AI Solutions Lead</span>
             </h1>
             <p class="hero-sub" 
-               data-en="I build the bridge between raw data and business value. From mastering Qlik/SAP pipelines to architecting modular Multi-Agent Systems. I lead teams, navigate C-level strategy, and deliver production-grade solutions."
-               data-de="Ich baue die Brücke zwischen Rohdaten und geschäftlichem Mehrwert. Von der Beherrschung von Qlik/SAP-Pipelines bis zur Architektur modularer Multi-Agenten-Systeme. Ich leite Teams, navigiere durch C-Level-Strategien und liefere produktive Lösungen.">
-                I build the bridge between raw data and business value. From mastering Qlik/SAP pipelines to architecting modular Multi-Agent Systems. I lead teams, navigate C-level strategy, and deliver production-grade solutions.
+               data-en="I build the bridge between raw data and business value—from mastering ETL pipelines to architecting modular Multi-Agent Systems. I lead teams, navigate C-level strategy, and deliver production-grade solutions that last."
+               data-de="Ich baue die Brücke zwischen Rohdaten und geschäftlichem Mehrwert—von der Beherrschung von ETL-Pipelines bis zur Architektur modularer Multi-Agenten-Systeme. Ich leite Teams, navigiere durch C-Level-Strategien und liefere produktive Lösungen mit Langzeitwirkung.">
+                I build the bridge between raw data and business value—from mastering Qlik/SAP pipelines to architecting modular Multi-Agent Systems. I lead teams, navigate C-level strategy, and deliver production-grade solutions that last.
             </p>
 
             <!-- PILLAR LINKS -->
@@ -466,8 +521,8 @@
                 <h2 class="section-title" style="border-color: var(--data-blue);" data-en="The Foundation" data-de="Das Fundament">The Foundation</h2>
                 <p class="section-subtitle" 
                    data-en="Before AI, there must be reliable data. Transforming 'Excel Hell' into automated intelligence."
-                   data-de="Vor der KI braucht es verlässliche Daten. Die Transformation von 'Excel-Chaos' in automatisierte Intelligenz.">
-                    Before AI, there must be reliable data. Transforming "Excel Hell" into automated intelligence.
+                   data-de="Vor der KI braucht es verlässliche Daten. Ich transformiere 'Excel-Chaos' in automatisierte Intelligenz.">
+                    Before AI, there must be reliable data. I transform "Excel Hell" into automated intelligence.
                 </p>
             </div>
 
@@ -574,16 +629,16 @@
                 <!-- RIGHT -->
                 <div>
                     <h4 class="mono text-green" style="margin-bottom: 20px;" data-en="STRATEGIC ARSENAL" data-de="STRATEGISCHES ARSENAL">STRATEGIC ARSENAL</h4>
-                    <div class="strat-arsenal-grid">
-                        <span class="strat-pill" data-en="Stakeholder Management" data-de="Stakeholder Management">Stakeholder Management</span>
+                    <div class="strat-arsenal-grid">                        
                         <span class="strat-pill" data-en="Team Leadership" data-de="Teamführung">Team Leadership</span>
+                        <span class="strat-pill" data-en="Stakeholder Management" data-de="Stakeholder Management">Stakeholder Management</span>
                         <span class="strat-pill" data-en="Internal Consulting" data-de="Interne Beratung">Internal Consulting</span>
                         <span class="strat-pill" data-en="Modular System Scalability" data-de="Modulare Systemskalierung">Modular System Scalability</span>
                         <span class="strat-pill" data-en="Agile / Scrum" data-de="Agile / Scrum">Agile / Scrum</span>
-                        <span class="strat-pill" data-en="Requirement Engineering" data-de="Anforderungsmanagement">Requirement Engineering</span>
+                        <span class="strat-pill" data-en="Requirement Engineering" data-de="Requirement Engineeringt">Requirement Engineering</span>
                         <span class="strat-pill" data-en="Zero-Budget Prototyping" data-de="Zero-Budget Prototyping">Zero-Budget Prototyping</span>
-                        <span class="strat-pill" data-en="Cross-Dept Communication" data-de="Abt.übergreifende Kommunikation">Cross-Dept Communication</span>
-                        <span class="strat-pill" data-en="German (C2/Fluent)" data-de="Deutsch (C2/Verhandlungssicher)">German (C2/Fluent)</span>
+                        <span class="strat-pill" data-en="Cross-Dept Communication" data-de="Bereichsübergreifende Kommunikation">Cross-Dept Communication</span>
+                        <span class="strat-pill" data-en="German (C2/Business Fluent)" data-de="Deutsch (C2/Verhandlungssicher)">German (C2/Fluent)</span>
                     </div>
                 </div>
             </div>
@@ -683,7 +738,7 @@
                             <span data-en="Email" data-de="E-Mail">Email</span>
                         </div>
                         <div class="flip-card-back">
-                            <a href="mailto:arora.gurinder0@gmail.com" style="font-size: 0.85rem;">arora.gurinder0@gmail.com</a>
+                            <a href="/cdn-cgi/l/email-protection#ddbcafb2afbcf3baa8afb4b3b9b8afed9dbab0bcb4b1f3beb2b0" style="font-size: 0.85rem;"><span class="__cf_email__" data-cfemail="1a7b6875687b347d6f6873747e7f682a5a7d777b737634797577">[email&#160;protected]</span></a>
                         </div>
                     </div>
                 </div>
@@ -695,16 +750,57 @@
         </div>
     </footer>
 
+            <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script>
         // Language Switcher
         let lang = 'en';
         function toggleLang() {
             lang = lang === 'en' ? 'de' : 'en';
-            document.getElementById('lang-text').innerText = lang === 'en' ? 'EN | DE' : 'DE | EN';
-            document.querySelectorAll(`[data-${lang}]`).forEach(el => {
-                el.innerHTML = el.getAttribute(`data-${lang}`);
+            document.getElementById('lang-text').textContent = lang === 'en' ? 'EN | DE' : 'DE | EN';
+            
+            // Update all translatable elements
+            document.querySelectorAll('[data-en]').forEach(el => {
+                const text = el.getAttribute('data-' + lang);
+                if (text) {
+                    el.innerHTML = text;
+                }
             });
         }
+
+        // Smooth Scroll Fallback for Older Browsers
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if browser supports smooth scrolling
+            const supportsNativeSmoothScroll = 'scrollBehavior' in document.documentElement.style;
+            
+            if (!supportsNativeSmoothScroll) {
+                // Polyfill for smooth scroll
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const target = document.querySelector(this.getAttribute('href'));
+                        if (target) {
+                            target.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    });
+                });
+            }
+
+            // Resume Download Button Feedback
+            const resumeButtons = document.querySelectorAll('.resume-btn');
+            resumeButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    this.classList.add('downloaded');
+                    
+                    // Remove the checkmark after 2 seconds
+                    setTimeout(() => {
+                        this.classList.remove('downloaded');
+                    }, 2000);
+                });
+            });
+        });
     </script>
 </body>
 </html>
